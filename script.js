@@ -1,6 +1,7 @@
 var num1;
 var num2;
 var operator;
+var bool;
 
 const displayspan = document.getElementById("dval");
 const calcspan = document.getElementById("dcalc");
@@ -24,6 +25,7 @@ operateButtons.forEach(function(button) {
         operator = button.innerHTML;
         displayspan.innerText = calcspan.innerText + " "+ operator;
         num1 = parseInt(calcspan.innerText);
+        bool = true;
     })
 })
 
@@ -50,8 +52,9 @@ function operate(num1, num2, operator){
 }
 
 function populateDisplay(number){
-    if(calcspan.innerText == "0"){
+    if(calcspan.innerText == "0" || bool){
         calcspan.innerText = number;
+        bool = false;
     }
     else{
         calcspan.innerText = calcspan.innerText + number;
