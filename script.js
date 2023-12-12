@@ -79,12 +79,25 @@ equalButton.addEventListener("click", function(){
 clearButton.addEventListener("click", function(){
     num1 = 0;
     num2 = null;
+    operator = null;
+    num2string = null;
     initialdigit = true;
+    num2inuse = false;
+    equalbool = false;
 
-    displayspan.innerText = null;
+    displayspan.innerText = '\u00A0';
     calcspan.innerText = "0";
+})
 
 
+deleteButton.addEventListener("click", function(){
+    let temp = calcspan.innerText;
+    calcspan.innerText = temp.slice(0,-1);
+    if(calcspan.innerText.length == 0){
+        calcspan.innerText = 0;
+        num1 = "0";
+        initialdigit = true;
+    }
 })
 
 function operate(num1, num2, operator){

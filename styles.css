@@ -16,6 +16,7 @@ h1 {
     border-radius: 10px;
     padding-bottom: 30px;
     padding-top: 30px;
+    min-width: 200px;
 }
 
 .display{
@@ -41,8 +42,7 @@ h1 {
 
 .btn {
     display: grid;
-    grid-template-columns: 188px 188px;
-    justify-content: center;
+    grid-template-columns: repeat(2,2fr);
     gap: 4px;
     margin-top: 10px;
     margin-bottom: 4px;
